@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="calender.css" />
+</head>
+<script>
+    function calenderDay() {
+        var day = document.getElementById("Days").value;
+        var firstDOM = document.getElementById("start").value;
+        var d = new Date();
+        var contentDay = document.getElementById("content");
+        var rows = Math.ceil(day / 7);
+        var Data = "<tr>";
+        var count = 0;
+        var boxes = 0;
+
+        for (var x = 0; x < firstDOM; x++) {
+            Data += "<td class = 'null'></td>";
+            count++;
+            boxes++;
+        }
+        for (var y = 1; y <= day; y++) {
+            if (count == 7) {
+                Data += "<tr>";
+                count = 0;
+            }
+            if (y == d.getDate())
+                Data += "<td class='today'>" + y + "</td>";
+            else
+                Data += "<td class='norm'>" + y + "</td>";
+            count++;
+            boxes++;
+        }
+        if (boxes <= 35) {
+            for (var i = boxes; i < 35; i++) {
+                Data += "<td class='null'></td>";
+            }
+        }
+        else {
+            for (var i = boxes; i < 42; i++) {
+                Data += "<td class='null'></td>";
+            }
+        }
+        Data += "</tr>";
+        document.getElementById("content").innerHTML = Data;
+    }
+</script>
+
+<body bgcolor="grey">
+    <label for="Days">Number of Days in Month:</label>
+    <input type="text" id="Days"><br><br>
+    <label for="start">Day of the week (0 to 6, 0 = Sunday, 6 = Saturday), the month starts on:</label>
+    <input type="text" id="start"><br><br>
+    <input type="submit" value="Submit" onclick="calenderDay()"><br><br>
+    <div class="topleft">
+        <h3>Calender</h3>
+        <table id="calender">
+            <thead>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </thead>
+            <tbody id="content">
+            </tbody>
+        </table>
+    </div>
+</body>

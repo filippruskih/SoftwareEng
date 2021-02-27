@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table{
+            border: 3px solid black;
+            background-color: lightpink;   
+        }
+    </style>
+    <script>
+        function CheckEntry() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var question = document.getElementById("question").value;
+            var selection = document.getElementById("select").value;
+
+            if (name != 1 && question != 1 && email.includes("@") && email.includes(".") && selection != 1) {
+                alert("Submitted");
+            }
+            else {
+                alert("Invalid input, please check again!");
+            }
+        }
+    </script>
+</head>
+
+<body bgcolor="lightblue">
+    <div>
+        <table id="User input">
+            <thead>Customer Access</thead>
+            <tbody id="content">
+                <tr>
+                    <td>Options:</td>
+                    <td>
+                        <select id="select">
+                            <option value='1'>Select an Option</option>
+                            <option value='2'>Goods For Sale</option>
+                            <option value='3'>Complaints</option>
+                            <option value='4'>Support</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Question:</td>
+                    <td><textarea id="question" value="1"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Name: </td>
+                    <td><input type="text" id="name" value='1' onfocus="this.value=''"></td>
+                </tr>
+                <tr>
+                    <td>Email: </td>
+                    <td><input type="text" id="email" value='1' onfocus="this.value=''"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="button" onclick="CheckEntry();">Submit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

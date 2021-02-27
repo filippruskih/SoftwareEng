@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {
+            margin-left: 275px;
+            color: #7E2FEE;
+        }
+
+        th {
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+            font-style: bold;
+            background-color: palevioletred;
+        }
+
+        tr {
+            height: 50px;
+            width: 100px;
+        }
+
+        table,
+        td,
+        th {
+            border: 2px solid blue;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .grey {
+            background-color: lightsalmon;
+        }
+
+        .day {
+            background-color: violet;
+        }
+    </style>
+    <script>
+        function showCalendar() {
+            var Year = parseInt(document.getElementById("txtYear").value);
+            var Month = parseInt(document.getElementById("txtMonth").value);
+            document.getElementById("divOutput").innerHTML = getHtmlCalendar(Year, Month);
+        }
+
+        function getHtmlCalendar(Year, Month) {
+
+            var myDateObject = new Date();
+            var currentDayNum = myDateObject.getDate();
+
+            var numOfDays = 0;
+            var monthName;
+            switch (Month) {
+                case 0:
+                    numOfDays = 31;
+                    monthName = "January";
+                    break;
+                case 1:
+                    monthName = "February";
+                    if (is_leap(Year) == 1)
+                        numOfDays = 29;
+                    else
+                        numOfDays = 28;
+                    break;
+                case 2:
+                    numOfDays = 31;
+                    monthName = "March";
+                    break;
+                case 3:
+                    numOfDays = 30;
+                    monthName = "April";
+                    break;
+                case 4:
+                    numOfDays = 31;
+                    monthName = "May";
+                    break;
+                case 5:
+                    numOfDays = 30;
+                    monthName = "June";
+                    break;
+                case 6:
+                    numOfDays = 31;
+                    monthName = "July";
+                    break;
+                case 7:
+                    numOfDays = 31;
+                    monthName = "August";
+                    break;
+                case 8:
+                    numOfDays = 30;
+                    monthName = "September";
+                    break;
+                case 9:
+                    numOfDays = 31;
+                    monthName = "October";
+                    break;
+                case 10:
+                    numOfDays = 30;
+                    monthName = "November";
+                    break;
+                case 11:
+                    numOfDays = 31;
+                    monthName = "December";
+                    break;
+            }
+            var d = new Date(Year, Month, 1);
+            var firstDay = d.getDay();
+
+            var html = document.getElementById("callTitle").innerHTML = monthName + " " + Year;
+
+            var html = "<table border=1><tr><th width=50>Sun</th><th width=50>Mon</th><th width=50>Tue</th><th width=50>Wed</th><th width=50>Thu</th><th width=50>Fri</th><th width=50>Sat</th></tr>";
+
+            var currColumn = 0;
+
+            html += "<tr>";
+            for (i = 0; i < firstDay; i++) {
+                html += "<td class='grey'></td>";
+                currColumn++;
+            }
+
+            var day = 1;
+            while (day <= numOfDays) {
+                if (day == currentDayNum)
+                    html += "<td class='day'>" + day + "</td>";
+                else
+                    html += "<td class='day'>" + day + "</td>";
+                currColumn++;
+                if (currColumn == 7) {
+                    html += "</tr><tr>";
+                    currColumn = 0;
+                }
+                day++;
+            }
+
+            if (currColumn > 0) {
+                for (i = currColumn; i < 7; i++)
+                    html += "<td class='grey'></td>";
+            }
+
+            html += "</tr></table>";
+            return html;
+
+        }
+
+        function is_leap(Year) {
+            if (Year % 400 == 0)
+                return 1;
+            if (Year % 100 == 0)
+                return 0;
+            if (Year % 4 == 0)
+                return 1;
+            return 0;
+        }
+
+    </script>
+</head>
+
+<body>
+    Please enter the Year you want to see? <input id='txtYear'><br>
+    what Month do you want to see?(Enter 0 for January, 1 for February and so on) <input id='txtMonth'><br>
+    <button onclick='showCalendar();'>Show Calendar</button><br>
+    <h1 id="callTitle"></h1>
+    <div id='divOutput'></div>
+</body>
+
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        h1 {
+            margin-left: 275px;
+            color: #7E2FEE;
+        }
+
+        th {
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+            font-style: bold;
+            background-color: palevioletred;
+        }
+
+        tr {
+            height: 50px;
+            width: 100px;
+        }
+
+        table, td, th {
+            border: 2px solid blue;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .grey {
+            background-color: lightsalmon;
+        }
+
+        .day {
+            background-color: violet;
+        }
+    </style>
+    <script>
+        function showCalendar() {
+            var Year = parseInt(document.getElementById("txtYear").value);
+            var Month = parseInt(document.getElementById("txtMonth").value);
+            document.getElementById("divOutput").innerHTML = getHtmlCalendar(Year, Month);
+        }
+
+        function getHtmlCalendar(Year, Month) {
+            var myDateObject = new Date();
+            var currentDayNum = myDateObject.getDate();
+
+            var numOfDays = 0;
+            var monthName;
+       
+            switch (Month) {
+                case 0:
+                    numOfDays = 31;
+                    monthName = "January";
+                    break;
+                case 1:
+                    monthName = "February";
+                    if (is_Leap(Year)==1)
+                        numOfDays = 29;
+                    else
+                        numOfDays = 28;
+                    break;
+                case 2:
+                    numOfDays = 31;
+                    monthName = "March";
+                    break;
+                case 3:
+                    numOfDays = 30;
+                    monthName = "April";
+                    break;
+                case 4:
+                    numOfDays = 31;
+                    monthName = "May";
+                    break;
+                case 5:
+                    numOfDays = 30;
+                    monthName = "June";
+                    break;
+                case 6:
+                    numOfDays = 31;
+                    monthName = "July";
+                    break;
+                case 7:
+                    numOfDays = 31;
+                    monthName = "August";
+                    break;
+                case 8:
+                    numOfDays = 30;
+                    monthName = "September";
+                    break;
+                case 9:
+                    numOfDays = 31;
+                    monthName = "October";
+                    break;
+                case 10:
+                    numOfDays = 30;
+                    monthName = "November";
+                    break;
+                case 11:
+                    numOfDays = 31;
+                    monthName = "December";
+                    break;
+            }
+            var d = new Date(Year, Month, 1);
+            var firstday = d.getDay();
+            var html = document.getElementById("callTitle").innerHTML = monthName+" "+Year;
+            var html = "<table border=1><tr><th width=50>Sun</th><th width=50>Mon</th><th width=50>Tue</th><th width=50>Wed</th><th width=50>Thu</th><th width=50>Fri</th><th width=50>Sat</th></tr>";
+
+            var currColumn = 0;
+
+
+            html += "<tr>";
+            for (i = 0; i < firstday; i++) {
+                html += "<td class='grey'></td>";
+                currColumn++;
+            }
+
+            var day = 1;
+            while (day <= numOfDays) {
+                if (day == currentDayNum)
+                    html += "<td class='day'>" + day + "</td>";
+                else
+                    html += "<td class='day'>" + day + "</td>";
+                currColumn++;
+
+                if (currColumn == 7) {
+                    html += "</tr><tr>";
+                    currColumn = 0;
+                }
+                day++;
+            }
+
+            if (currColumn > 0) {
+                for (i = currColumn; i < 7; i++)
+                    html += "<td class='grey'></td>";
+            }
+
+            html += "</tr></table>";
+            return html;
+        }
+        function is_Leap(Year){
+                if (Year % 400 == 0)
+                    return 1;
+                if (Year % 100 == 0)
+                    return 0;
+                if (Year % 4 == 0)
+                    return 1;
+                return 0;  
+        }
+
+    </script>
+</head>
+
+<body>
+    Please enter the Year you want to see? <input id='txtYear'><br>
+    What Month do you want to see?(Enter 0 for January, 1 for February and so on) <input id='txtMonth'><br>
+    <button onclick='showCalendar();'>Show Calendar</button><br>
+    <h1 id="callTitle"></h1>
+    <div id='divOutput'></div>
+</body>
+
+</html>
+

@@ -1,0 +1,50 @@
+div
+{
+    width: 50%;
+    margin: auto;
+}
+
+table
+{
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+
+h3
+{
+    text-align: center;
+}
+
+#calender thead th
+{
+    width: 14.280%;
+    height: 40px;
+    border: 5px solid navy;
+    background-color: lightblue;
+}
+
+#calender td
+{
+    text-align: center;
+    height: 50px;
+    border: 5px solid aliceblue;
+}
+
+.today
+{
+    background-color: lightgreen;
+    font-weight: 900;
+    font-size: 175%;
+    text-decoration: underline;
+}
+
+.null
+{
+    background-color: rgb(255, 186, 122);
+}
+
+.norm
+{
+    background-color: lightpink;
+}

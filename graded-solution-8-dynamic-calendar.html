@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<style>
+		th { background:#5555FF; }
+		.grey { background:#DDDDDD; } 
+		.day { background:#AAAAFF; } 
+		.today { background:#FFAAFF; } 
+	</style>
+  	<script>
+  		function showCalendar() {
+				var month = parseInt(document.getElementById("txtMonth").value);  
+				var year = parseInt(document.getElementById("txtYear").value);
+				if (year<1900 || isNaN(year)) {
+					alert("Year must be 1900 or later!");
+					return;
+				}
+				if (month<1 || month>12 || isNaN(month)) {
+					alert("Month must be in the range 1-12!");
+					return;
+				}
+				document.getElementById("divOutput").innerHTML = getHtmlCalendar(year, month);			
+  		}
+
+  		function first_day(year, month)  {
+		   // calculates day of week of 1st of any month after Jan 1900
+		   var daynumber = new_years_day(year); // day of week of Jan 1 this year
+		   for (var i=1; i<month; i++) // loop for each elapsed month this year
+		      daynumber+=no_of_days(year, i);  // add days in each elapsed month
+		   daynumber %= 7;
+		   return daynumber;
+		}
+
+		function new_years_day(year)  {
+		   // calculates day of the week of Jan 1st in any year >=1900
+		   var daynumber = 1; // Jan 1st 1900 = a Monday
+		   for (var i=1900; i<year; i++) // loop for each elapsed year
+		      daynumber+=365+is_leap(i); // add 365 or 366 for each elapsed year
+		   return (daynumber % 7); // modulus = useful!
+		}
+
+		function no_of_days(year, month) {
+			if (month == 9 || month == 4 || month == 6 || month == 11)
+				return 30;
+			if (month != 2)
+				return 31;
+			return (28+is_leap(year));
+		}
+
+		function is_leap(year) {
+			if (year % 400 == 0)
+				return 1;
+			if (year % 100 == 0)
+				return 0;
+			if (year % 4 == 0)
+				return 1;
+			return 0;
+		}
+
+        function getHtmlCalendar(year, month) {
+	        var myDateObject = new Date(); 
+	        var currentDayNum = myDateObject.getDate();
+	        var currentMonthNum = myDateObject.getMonth() + 1;
+	        var currentYear = myDateObject.getFullYear();
+	        var firstday = first_day(year, month);
+	        var noofdays = no_of_days(year, month);
+
+	        var html = "<table border=1><tr><th width=50>Sun</th><th width=50>Mon</th><th width=50>Tue</th><th width=50>Wed</th><th width=50>Thu</th><th width=50>Fri</th><th width=50>Sat</th></tr>";
+	        
+	        var currColumn = 0;
+	        
+	        html += "<tr>";
+	        for (i=0; i<firstday; i++) {
+	          html += "<td class='grey'></td>";
+	          currColumn++;
+	        }
+	            
+	        var day=1;
+	        while (day <= noofdays)
+	        {
+	          if (day==currentDayNum && year==currentYear && month==currentMonthNum)
+	            html += "<td class='today'><u><b>" + day + "</b></u></td>";
+	          else
+	            html += "<td class='day'>" + day + "</td>";
+	          currColumn++;
+	          if (currColumn==7) {
+	            html += "</tr><tr>";
+	            currColumn=0;
+	          }
+	          day++;
+	        }
+	        
+	        if (currColumn>0) {
+	          for (i=currColumn; i<7; i++)
+	            html += "<td class='grey'></td>";
+	        }
+	        
+	        html += "</tr></table>";
+	        return html;
+        }
+	</script>
+  </head>
+  <body>
+  	Year: <input id='txtYear'><br>
+  	Month: <input id='txtMonth'><br>
+    <button onclick='showCalendar();'>Show Calendar</button><br>
+    <div id='divOutput'></div>
+  </body>
+</html>
