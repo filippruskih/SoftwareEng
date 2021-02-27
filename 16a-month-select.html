@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<script>
+  		function showChoice() {
+            var oSelect = document.getElementById("selMonth");
+			var idx = oSelect.selectedIndex;  
+            alert("You selected index "+idx);		
+            var val = oSelect.options[idx].value;
+            alert(".. and its value is "+val);
+            var txt = oSelect.options[idx].text;
+            alert(".. and its text is "+txt);
+  		}
+	</script>
+  </head>
+  <body>
+  	Month: <select id='selMonth'>
+  		<option value='1'>January</option>
+  		<option value='2'>February</option>
+  		<option value='3'>March</option>
+  		<option value='4'>April</option>
+  		<option value='5'>May</option>
+  		<option value='6'>June</option>
+  		<option value='7'>July</option>
+  		<option value='8'>August</option>
+  		<option value='9'>September</option>
+  		<option value='10'>October</option>
+  		<option value='11'>November</option>
+  		<option value='12'>December</option>
+  	</select>
+    <button onclick='showChoice();'>Show Choice</button><br>
+  </body>
+</html>

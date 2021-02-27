@@ -1,0 +1,30 @@
+div{
+    padding: 20px;
+    font-size: 25px;
+    background-color: blue;
+    color: white;
+    position: absolute;
+    border: 4px;
+    border-color: red;
+    border-style: solid;
+}
+
+.topleft{
+    left: 5px;
+    top: 5px;
+}
+
+.topright{
+    right: 5px;
+    top: 5px;
+}
+
+.bottomleft{
+    left: 5px;
+    bottom: 5px;
+}
+
+.bottomright{
+    right: 5px;
+    bottom: 5px;
+}

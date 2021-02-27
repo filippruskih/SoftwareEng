@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<script>
+    function getTime() {
+        var requester = new XMLHttpRequest;
+        requester.onreadystatechange = function() {
+            if (requester.readyState == 4 && requester.status == 200) {
+                document.getElementById("divTime").innerHTML = requester.responseText;
+            }
+        }
+        requester.open("GET", "http://www.psychicsoftware.com/ct1113/time.php", true); 
+        requester.send();
+    }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	var nums = [];
+
+	function Delete(a){	
+        nums.splice(a, 1);
+		redrawTable();
+	}
+
+	function addNumber() {
+		var txt = document.getElementById("txtNumber").value;
+		var number = parseInt(txt);
+		if (isNaN(number))
+			alert(txt+" is not a number!");
+		else {
+			nums.push(number);
+			redrawTable();
+		}
+	}
+
+	function redrawTable() {
+		var html = '<table border="1">';
+		for(i=0; i < nums.length; i++){
+			html+= "<tr><td>"+ nums[i]+ "<button onclick='Delete("+i+");'>delete</button>" +"</td></tr>";		
+		}
+		html += "</table>";
+		document.getElementById("pOutput").innerHTML = html;
+
+	}
+</script>
+</head>
+<body>
+	<input type='text' id='txtNumber'> <button onclick='addNumber();'>Add Number</button>
+	<p id="pOutput"></p>
+</body>
+</html>

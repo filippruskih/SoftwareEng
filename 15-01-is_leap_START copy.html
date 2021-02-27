@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<script>
+		function is_leap(year) {
+			if (year % 400 == 0)
+				return 1;
+			if (year % 100 == 0)
+				return 0;
+			if (year % 4 == 0)
+				return 1;
+			return 0;
+			// write your code here!
+			// return 1 if year is a leap year
+			// return 0 if year is not a leap year
+		}
+
+		function checkYear() {
+			var txt = document.getElementById("txtYear").value;
+			var year = parseInt(txt);
+			if (isNaN(year))
+				alert(txt + " is not a number!");
+			else if (is_leap(year)==1)
+				alert(year + " is a leap year");
+			else
+				alert(year + " is not a leap year");
+		}
+	</script>
+  </head>
+  <body>
+  	<input id='txtYear'> <button onclick='checkYear();'>Check Year</button>
+  </body>
+</html>

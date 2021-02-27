@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		function checkMonth() {
+			var oSelMonth = document.getElementById("selMonth");
+			var idx = oSelMonth.selectedIndex;
+			alert("You chose month " + (idx + 1));
+		}
+	</script>
+</head>
+
+<body>
+	Month: <select id='selMonth'>
+				<option value='1'>January</option>
+				<option value='1'>February</option>
+				<option value='1'>March</option>
+				<option value='1'>April</option>
+				<option value='1'>May</option>
+				<option value='1'>June</option>
+				<option value='1'>July</option>
+				<option value='1'>August</option>
+				<option value='1'>September</option>
+				<option value='1'>October</option>
+				<option value='1'>November</option>
+				<option value='1'>December</option>
+			</select>
+	<button onclick='checkMonth();'>Check Month</button>
+
+</body>
+</html>

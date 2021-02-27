@@ -1,0 +1,68 @@
+<html>
+
+<head>
+  <script>
+    var leftPos = 800, topPos = 100;
+
+    function init() {
+      animate();
+      keyArrows();
+    }
+    // function to move it up
+    function up1() {
+      var element = document.getElementById('divVan');
+      element.style.top = parseInt(element.style.top) - 20 + 'px';
+    }
+    //function down
+    function down1() {
+      var element = document.getElementById('divVan');
+      element.style.top = parseInt(element.style.top) + 20 + 'px';
+    }
+    //function left
+    function left1() {
+      var element = document.getElementById('divVan');
+      element.style.left = parseInt(element.style.left) - 20 + 'px';
+    }
+    //function right
+    function right1() {
+      var element = document.getElementById('divVan');
+      element.style.left = parseInt(element.style.left) + 20 + 'px';
+    }
+
+    function keyArrows() {
+      animate();
+      window.onkeydown = function selectMove(evt) {
+        switch (evt.keyCode) {
+          case 37:
+            left1();
+            break;
+          case 38:
+            up1();
+            break;
+          case 39:
+            right1();
+            break;
+          case 40:
+            down1();
+            break;
+        }
+
+      }
+    }
+
+    function animate() {
+      document.getElementById("divVan").style.left = leftPos + "px";
+      document.getElementById("divVan").style.top = topPos + "px";
+      //window.setTimeout(animate, 20);
+    }
+
+  </script>
+</head>
+
+<body onload="init();">
+  <div id='divVan' style='position:absolute; left:800px; top:100px'>
+    <img src='mysteryMachine.png'>
+  </div>
+</body>
+
+</html>

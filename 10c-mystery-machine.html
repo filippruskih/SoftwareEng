@@ -1,0 +1,32 @@
+<html>
+<head>
+<script>
+  var leftPos=1100;
+  var isMoving=true;
+
+  function moveTheVan() {
+      if (isMoving)
+          leftPos -= 2;
+	     
+       document.getElementById("divVan").style.left = leftPos+"px";
+	     if (leftPos>0)
+		   window.setTimeout(moveTheVan, 20);
+       
+	  }
+
+    function vanWasClicked(){
+      isMoving = !isMoving
+
+    }
+</script>
+</head>
+<body>
+  <div id='divVan' style='position:absolute; left:1100px; top:100px'>
+     <img src='mysteryMachine.png' onclick='vanWasClicked()'>
+  </div>
+  <button onClick='moveTheVan();'>Scoobie Doo!</button>
+</body>
+</html>
+
+
+

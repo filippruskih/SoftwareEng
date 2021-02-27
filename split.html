@@ -1,0 +1,22 @@
+<html>
+<head>
+<script>
+
+function splitWords() {
+var txt = document.getElementById("userText").value; 
+var arr = txt.split(" ");
+var output = arr.length + " words";
+
+    for (var i=0;i<arr.length;i++)
+        output += "\n" + arr[i]; document.getElementById("outputText").value = output;
+} 
+</script> 
+</head> 
+<body>
+    Type some stuff..<br>
+    <input id='userText' onkeyup='splitWords();'><br> 
+    <textarea id='outputText'></textarea>
+</body> 
+</html>
+
+
