@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment 5</title>
+    <script>
+        function moveThePic() {
+            var position1 = Math.random()*600;
+            var position2 = Math.random()*600;
+
+        document.getElementById("divPic").style.top = position1+"px"; 
+        document.getElementById("divPic").style.left = position2+"px"; 
+
+            }
+    </script>
+
+</head>
+<body onload = 'moveThePic()'>
+    <div onclick = 'moveThePic();' id='divPic' style='width: 200px; height: 200px; position: absolute;'> 
+        <img src='studio511_Logo.png' width="300px" height="100px">
+    </div>
+</body>
+</html>
+
+
+

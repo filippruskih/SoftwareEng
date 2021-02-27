@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Image changer</title>
+    </head>
+<body>
+
+   <img src="http://www.psychicsoftware.com/ct1113/banner-image-1.png"
+   id= "imgButton" onclick="clicked()">
+   <h3>Click the picture above</h3>
+</body>
+<script>
+let img = document.getElementById("imgButton");
+let num = 1;
+function clicked(){
+    num++;
+    num > 6 ? num = 1:
+    num = num;
+    img.src= "http://www.psychicsoftware.com/ct1113/banner-image-" + num + ".png";
+}
+</script>
+</html>

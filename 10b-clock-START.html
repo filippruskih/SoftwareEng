@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function updateClock() {
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+		var s = today.getSeconds();
+		var txt = h + ':' + m + ':' + s;
+		document.getElementById('theClock').innerHTML = txt;
+		window.setTimeout(updateClock, 1000)
+}
+
+</script>
+<body onload="updateClock();">
+	<p id="theClock" style="text-align:center; font-size:120px;">00:00:00</p>
+</body>
+
+

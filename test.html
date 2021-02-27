@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <script>
+      function getName() {
+        var name = window.prompt("What's your name?");
+        var msg = "Hello, " + name + " pleased to meet you.";
+        document.getElementById("p1").innerHTML = msg;
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="getName();">Click here!</button>
+    <p id='p1'></p>
+  </body>
+</html>
