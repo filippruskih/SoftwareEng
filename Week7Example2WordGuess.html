@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<title>Mortgage Calculator</title>
+<meta charset = "UTF-8">
+<style>
+    
+</style>
+    <script>
+        function Calculator()
+        {
+            var word = prompt("Please enter your word", "Type here");
+            var attempt = prompt("Please enter your guess word", "Type here");
+
+            for(var i=1;i<11;i++)
+            { 
+                var attempt=prompt("Guess the word")
+                if(attempt==word)
+                {
+                    alert("Congrats the word was "+word+" it took you "+i+" attempts")
+                break;
+                }
+        }
+
+
+            //document.getElementById("output").innerHTML = wordguess;
+            //document.getElementById("output2").innerHTML = guess;
+
+        }
+    </script>
+
+    <body onload="Calculator()" style="background-color:aliceblue;">
+        <h3>Mortgage Calculator</h3> 
+        <div id="output">Your output will be displayed below</div>
+        <div id="output2">Your output will be displayed below</div>
+
+    </body>
+    

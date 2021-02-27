@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AUDI Store Limerick</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="Audi.css" type="text/css" rel="stylesheet">
+
+    <script defer src="/__/firebase/8.0.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+
+    <script>
+    var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+
+        var slideIndex1 = 1;
+        showSlides1(slideIndex1);
+
+        // Next/previous controls
+        function plusSlides1(n) {
+            showSlides1(slideIndex1 += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide1(n) {
+            showSlides1(slideIndex1 = n);
+        }
+
+        function showSlides1(n) {
+            var i;
+            var slides1 = document.getElementsByClassName("mySlides1");
+            var dots1 = document.getElementsByClassName("demo1");
+            var captionText1 = document.getElementById("caption1");
+            if (n > slides1.length) {slideIndex1 = 1}
+            if (n < 1) {slideIndex1 = slides1.length}
+            for (i = 0; i < slides1.length; i++) {
+                slides1[i].style.display = "none";
+            }
+            for (i = 0; i < dots1.length; i++) {
+                dots1[i].className = dots1[i].className.replace(" active", "");
+            }
+            slides1[slideIndex1-1].style.display = "block";
+            dots1[slideIndex1-1].className += " active";
+            captionText1.innerHTML = dots1[slideIndex1-1].alt;
+        }
+
+        function AudiA1()
+        {
+          var a1HTML = "";
+          a1HTML += "The new Audi A1 Sportback combines dynamic design with everyday practicality. It is the perfect urban companion that doesn’t compromise on style or detail. The new refined interior offers new levels of spaciousness and comfort, making it the perfect drive for longer adventures. Cheapest to run in the A1 range is the 104bhp 1.6-litre diesel. Thanks to its efficient common rail diesel engine it averages 70.6mpg. Next for low Audi A1 running costs is the 85bhp 1.2 TFSI petrol. The more powerful 120bhp 1.4-litre engine also boasts low running costs.";
+          document.getElementById("output1").innerHTML = a1HTML;
+        }
+
+        function AudiA3()
+        {
+          var a3HTML = "";
+          a3HTML += "The Audi A3 Saloon is the firm’s smallest four-door saloon, going up against the likes of the Mercedes-Benz CLA, Jaguar XE and smaller two-door BMW 2 Series Coupe. It shares its underpinnings with the A3 and A3 Sportback, and so it comes with the same sharp styling, high quality interior and comprehensive range of turbocharged petrol and diesel engines. In a fast-changing world, you need a companion that is always ready for new challenges. With progressive design and innovative technologies such as Audi connect¹. That’s progress you can feel.";
+          document.getElementById("output1").innerHTML = a3HTML;
+        }
+
+        function AudiA4()
+        {
+          var a4HTML = "";
+          a4HTML += "Thanks to a new language of design and an almost completely new body, the sporty character of the Audi A4 saloon comes into play more than ever: it appears dynamic and powerful while attractive and aesthetic at the same time. A high-quality and functionally designed interior, innovative technologies in the fields of digitisation, infotainment and driver assistance systems, and powerful engines round off the overall package.";
+          a4HTML += "Fuel consumption combined*: 7.4-5.1 l/100 km. CO₂ emissions combined*: 168-135 g/km";
+          document.getElementById("output1").innerHTML = a4HTML;
+        }
+
+        function AudiA5()
+        {
+          var a5HTML = "";
+          a5HTML += "New elements on the front, sides and rear make the Audi A5 Coupé appear even lower and wider than ever, lending a touch of elegance. Beneath the surface, you can expect to find state-of-the-art technology and powerful engines (Combined fuel consumption in l/100 km*: 5.4–3.7; combined CO2 emissions in g/km*: 143–98).";
+          document.getElementById("output1").innerHTML = a5HTML;
+        }
+
+        function AudiA6()
+        {
+          var a6HTML = "";
+          a6HTML += "The Audi A6 is an executive car made by the German automaker Audi. All generations of the A6 have offered either front-wheel-drive or Torsen-based four-wheel-drive, marketed by Audi as their quattro system. Second- and third-generation A6 models have shared their platform with the company's Allroad models. When design meets efficiency and sportiness meets style. When innovation and precision go hand-in-hand and progressive elegance becomes palpable in every line. When form and function become a statement and progress stands above all else. That's when the executive class has a new pace setter: the Audi A6 Saloon. More athletic than ever. As supreme as always.";
+          document.getElementById("output1").innerHTML = a6HTML;
+        }
+
+        function AudiA7()
+        {
+          var a7HTML = "";
+          a7HTML += "Distinctive, unmistakable, A7. From its sharp lights with distinctive light signature via its upstanding front end with a single wide frame and its coupé-like silhouette to its sculptural rear end, the Audi A7 Sportback is an ambassador of a revolutionary language of design, carrying classic quattro genes at the same time. Proof that one can remain true to oneself through reinvention.";
+          document.getElementById("output1").innerHTML = a7HTML;
+        }
+/* RS RANGE */
+        function AudiS1()
+        {
+          var S1HTML = "";
+          S1HTML += "The Audi S1 is Audi's smallest S model car and a performance version of the Audi A1. The first variant (Typ 8X, produced from 2014 to 2018) has 228 hp (231 PS / 170 kW) derived from the Volkswagen group's EA888 2.0 litre turbo four cylinder, and on demand Haldex Quattro four-wheel-drive.";
+          document.getElementById("output2").innerHTML = S1HTML;
+        }
+
+        function AudiRS3()
+        {
+          var RS3HTML = "";
+          RS3HTML += "Combined fuel consumption*: 7.0-6.8 l/100 km. Combined CO₂ emissions*: 158-155 g/km. Striking front, dynamic side view, strong rear end – the Audi RS3 Sportback embodies sportiness from every angle. The athletic five-door model will help you get ahead in the city and across the country.";
+          document.getElementById("output2").innerHTML = RS3HTML;
+        }
+
+        function AudiRS4()
+        {
+          var RS4HTML = "";
+          RS4HTML += "Combined fuel consumption*: 10.0-9.7 l/100 km. Combined CO2 emissions*: 227–221 g/km. Are the high performance of a sports car and the functionality of a family car mutually exclusive? No, not at all. Just look at the Audi RS4 Avant. Its unconventional design and uncompromising silhouette make it clear: It’s all about sportiness. That’s why the Audi RS4 Avant is the ideal vehicle for progressive families.";
+          document.getElementById("output2").innerHTML = RS4HTML;
+        }
+
+        function AudiRS5()
+        {
+          var RS5HTML = "";
+          RS5HTML += "Fuel consumption, combined*: 9.1 l/100 km. CO₂ emissions, combined*: 208 g/km. The embodiment of pure dynamism: a striking front end brimming with power, along with signature flowing coupé lines, a wide, dominant stance and an impressive rear. Powered by a twin-turbo V6 with 331 kW (450 hp). The Audi RS 5 Coupé is the impressive embodiment of high performance.";
+          document.getElementById("output2").innerHTML = RS5HTML;
+        }
+
+        function AudiRS7()
+        {
+          var RS7HTML = "";
+          RS7HTML += "Combined fuel consumption in l/100 km*: 11.6–11.4. Combined CO₂ emissions in g/km*: 265–261. Wild and untamed or poised and athletic? With the Audi RS7 Sportback, you can have both. Coupé-like elegant design lines in tango red meet the brute force of the V8 TFSI engine. Innovative technology meets intuitive dynamism. Experience the fascination of not having to compromise.";
+          document.getElementById("output2").innerHTML = RS7HTML;
+        }
+
+        function AudiRSQ8()
+        {
+          var RSQ8HTML = "";
+          RSQ8HTML += "Fuel consumption combined¹: 12.1 l/100 km. CO₂ emissions combined¹: 277–276 g/km. The most powerful SUV coupé from Audi Sport: the RS Q8² with 441 kW (600 hp) of power. In addition to its RS performance, this impressive vehicle is capable of extraordinary transformations – both in its driving experience and in its design.";
+          document.getElementById("output2").innerHTML = RSQ8HTML;
+        }
+</script>
+
+<body style="background-color: #2e2d2d;">
+    <div class="container">
+        <div class="col-lg-12">
+            <img src="images/Logo.png" width="1060" height="500">
+        </div>
+    </div>
+
+    <div class="container">
+        <p style="color: aliceblue;">
+            Audi AG is a German automobile manufacturer that designs, engineers, produces, markets and distributes luxury vehicles. Audi is a member of the Volkswagen Group and has its roots at Ingolstadt, Bavaria, Germany. Audi-branded vehicles are produced in nine production facilities worldwide. <br> Below is a picture gallary of some of our top ranked vehicles.<br>
+        </p>
+    </div>
+
+    <!-- Container for the image gallery -->
+  <div class="container">
+    <h3 class="center">Audi A-range</h3>
+    <!-- Full-width images with number text -->
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+        <img src="images/AudiA1.jpg" width="800" height="500">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+        <img src="images/A3.webp" width="800" height="500">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+        <img src="images/A44.jpg" width="800" height="500">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+        <img src="images/A5.webp" width="800" height="500">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">5 / 6</div>
+        <img src="images/A66.jpg" width="800" height="500">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">6 / 6</div>
+        <img src="images/A7.jpg" width="800" height="500">
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+    <!-- Image text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+  
+    <!-- Thumbnail images -->
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor" src="images/AudiA1.jpg" width="180" height="160"  onclick="currentSlide(1)" alt="Audi A1">
+      </div>
+      <div class="column"> 
+        <img class="demo cursor" src="images/A3.webp" width="180" height="160" onclick="currentSlide(2)" alt="Audi A3">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="images/A44.jpg"width="180" height="160" onclick="currentSlide(3)" alt="Audi A4">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="images/A5.webp" width="180" height="160" onclick="currentSlide(4)" alt="Audi A5">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="images/A66.jpg" width="180" height="160" onclick="currentSlide(5)" alt="Audi A6">
+      </div> 
+      <div class="column">
+        <img class="demo cursor" src="images/A7.jpg" width="180" height="160" onclick="currentSlide(6)" alt="Audi A7">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="pbuttons">
+      <a class="btn btn-outline-warning btn-lg" onclick="AudiA1()" role="button">Audi A1</a>
+      <a class="btn btn-outline-primary btn-lg"onclick="AudiA3()" role="button">Audi A3</a>
+      <a class="btn btn-outline-info btn-lg" onclick="AudiA4()" role="button">Audi A4</a>
+      <a class="btn btn-outline-success btn-lg" onclick="AudiA5()" role="button">Audi A5</a>
+      <a class="btn btn-outline-light btn-lg" onclick="AudiA6()" role="button">Audi A6</a>
+      <a class="btn btn-outline-danger btn-lg" onclick="AudiA7()" role="button">Audi A7</a>
+
+      <div id="output1" style="color: aliceblue;"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3 class="center">Audi RS-range</h3>
+
+    <!-- Full-width images with number text -->
+    <div class="mySlides1">
+      <div class="numbertext1">1 / 6</div>
+        <img src="images/S1.jpg" width="800" height="500">
+    </div>
+  
+    <div class="mySlides1">
+      <div class="numbertext1">2 / 6</div>
+        <img src="images/RS3.jpg" width="800" height="500">
+    </div>
+  
+    <div class="mySlides1">
+      <div class="numbertext1">3 / 6</div>
+        <img src="images/RS4.jpg" width="800" height="500">
+    </div>
+  
+    <div class="mySlides1">
+      <div class="numbertext1">4 / 6</div>
+        <img src="images/RS5.jpg" width="800" height="500">
+    </div>
+  
+    <div class="mySlides1">
+      <div class="numbertext1">5 / 6</div>
+        <img src="images/RS7.jpg" width="800" height="500">
+    </div>
+  
+    <div class="mySlides1">
+      <div class="numbertext1">6 / 6</div>
+        <img src="images/RSQ88.jpg" width="800" height="500">
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev1" onclick="plusSlides1(-1)">&#10094;</a>
+    <a class="next1" onclick="plusSlides1(1)">&#10095;</a>
+  
+    <!-- Image text -->
+    <div class="caption1-container">
+      <p id="caption1"></p>
+    </div>
+  
+    <!-- Thumbnail images -->
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor1" src="images/S1.jpg" width="180" height="160"  onclick="currentSlide1(1)" alt="Audi S1">
+      </div>
+      <div class="column"> 
+        <img class="demo cursor1" src="images/RS3.jpg" width="180" height="160" onclick="currentSlide1(2)" alt="Audi RS3">
+      </div>
+      <div class="column">
+        <img class="demo cursor1" src="images/RS4.jpg"width="180" height="160" onclick="currentSlide1(3)" alt="Audi RS4">
+      </div>
+      <div class="column">
+        <img class="demo cursor1" src="images/RS5.jpg" width="180" height="160" onclick="currentSlide1(4)" alt="Audi RS5">
+      </div>
+      <div class="column">
+        <img class="demo cursor1" src="images/RS7.jpg" width="180" height="160" onclick="currentSlide1(5)" alt="Audi RS7">
+      </div> 
+      <div class="column">
+        <img class="demo cursor1" src="images/RSQ88.jpg" width="180" height="160" onclick="currentSlide1(6)" alt="Audi RSQ8">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="p1buttons">
+      <a class="btn btn-outline-warning btn-lg" onclick="AudiS1()" role="button">Audi S1</a>
+      <a class="btn btn-outline-primary btn-lg"onclick="AudiRS3()" role="button">Audi RS3</a>
+      <a class="btn btn-outline-info btn-lg" onclick="AudiRS4()" role="button">Audi RS4</a>
+      <a class="btn btn-outline-success btn-lg" onclick="AudiRS5()" role="button">Audi RS5</a>
+      <a class="btn btn-outline-light btn-lg" onclick="AudiRS7()" role="button">Audi RS7</a>
+      <a class="btn btn-outline-danger btn-lg" onclick="AudiRSQ8()" role="button">Audi RSQ8</a>
+
+      <div id="output2" style="color: aliceblue;"></div>
+    </div>
+  </div>
+  <footer>
+    <img class="center" src="images/RSQ8.jpg" width="800" height="500">
+  </footer>
+</body>

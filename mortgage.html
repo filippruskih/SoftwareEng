@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<title>Mortgage Calculator</title>
+<meta charset = "UTF-8">
+<style>
+    
+</style>
+    <script>
+        function Calculator()
+        {
+            var salary = prompt("Please enter your salary here", "Type here");
+            var monthlyExp = prompt("Please enter you montly expenses", "Type here");
+            var salarynum = parseInt(salary);
+            var monthlyExpNum = parseInt(monthlyExp);
+            var yearlyExp = monthlyExpNum * 12;
+
+            var result = (salarynum - yearlyExp);            
+            var maxLoan = result*3.5;
+            var sHTML = "Your salary is "+salarynum+" - your yearly expenses "+yearlyExp+" = Net income = "+result +"<br> Your maximum amount for a loan is "+maxLoan;
+            document.getElementById("output").innerHTML = sHTML;
+        }
+    </script>
+
+    <body onload="Calculator()" style="background-color:aliceblue;">
+        <h3>Mortgage Calculator</h3> 
+        <div id="output">Your output will be displayed below</div>
+    </body>
+    

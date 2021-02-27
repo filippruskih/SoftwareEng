@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<script>
+	  	function updateStats() {
+	  		var txt = document.getElementById("txtUserInput").value;
+	  		var numchars = txt.length;
+	  		var numWords = 0;
+            var prevWasAlpha = false;
+
+	  		for (var i=0; i<numchars; i++) {
+                var currLetter = txt.substr(i,1);
+                if ((currLetter>="A" && currLetter<="Z") || (currLetter>="a" && currLetter<="z") || currLetter=="'") {
+                    if (!prevWasAlpha)
+                        numWords++;
+                    prevWasAlpha = true;
+                }
+                else
+                    prevWasAlpha = false;
+	  		}
+	  		document.getElementById("pOutput").innerHTML = numchars+" characters<br>"+numWords+" words.";
+	  	}
+  	</script>
+  </head>
+  <body>
+  	<textarea id='txtUserInput' onkeyup="updateStats();" value="Type your text here."></textarea><br>
+  	<p id='pOutput'>
+  		Your stats will be shown here.
+  	</p>
+  </body>
+</html>

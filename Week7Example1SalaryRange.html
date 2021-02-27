@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<title>Mortgage Calculator</title>
+<meta charset = "UTF-8">
+<style>
+    
+</style>
+    <script>
+        function Calculator()
+        {
+            var salary = prompt("Please enter your salary here", "Type here");
+
+            if(salary < 100000)
+            {
+                alert("You are poor");
+            }
+            else if(salary > 500000)
+            {
+                alert("You are rich");
+            }
+            else if(salary > 100000 && salary < 500000)
+            {
+                alert("You are average");
+            }
+
+            document.getElementById("output").innerHTML = salary;
+        }
+    </script>
+
+    <body onload="Calculator()" style="background-color:aliceblue;">
+        <h3>Mortgage Calculator</h3> 
+        <div id="output">Your output will be displayed below</div>
+    </body>
+    

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<title>Retirement Calculator</title>
+<meta charset = "UTF-8">
+<style>
+    
+</style>
+    <script>
+        function Calculator()
+        {
+            var age = prompt("Please enter your age", "Type here");
+
+            if(age < 68 && age > 18)
+            { 
+                retirementAge = (68 - age);
+                alert("You are not yet retiring, youll retire in "+ retirementAge +" year(s)");
+            }
+            else if(age < 18)
+            {
+                alert("You are still a child");
+            }
+            else if(age >= 68 && age < 110)
+            {
+                retirementAge2 = (age-68);
+                alert("You are retired, youve been retired for "+retirementAge2+" year(s)");
+            }
+            else if(age > 110)
+            {
+                alert("Bro, youre dead already");
+            }
+        }
+    </script>
+
+    <body onload="Calculator()" style="background-color:aliceblue;">
+        <h3>Retirement Calculator</h3> 
+
+    </body>
+    
