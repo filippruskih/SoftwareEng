@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var frame = 1;
+        var leftx = 100;
+
+        function animate(){
+            frame++;
+            if(frame == 7)
+                frame = 1;
+
+            document.getElementById("theGoblinImage").src = "http://psychicsoftware.com/ct1113/goblin_"+frame+".png";
+            setTimeout(animate, 50);
+        }
+
+        function moveTheGoblin(){
+            leftx += 5;
+
+            document.getElementById("theGoblin").style.left = leftx+"px";
+
+            setTimeout(moveTheGoblin, 50);
+        }
+
+    </script>
+</head>
+<body onload="animate(); moveTheGoblin();">
+<div style='position:absolute; left:200px; top:200px;' id='theGoblin'>
+<img id='theGoblinImage' src='http://www.psychicsoftware.com/goblin_run_1.png'>
+</div>
+</body>
+</html>

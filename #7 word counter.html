@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Word And Character Counter</title>
+        <script>
+            function updateOutput(){
+                var txt = document.getElementById("txtUserInput").value;
+	  		    var numchars = txt.length;
+	  		    var numwords = 1;
+
+                for(var i = 0; i>=0; i++){
+                    if(txt.substr(i,1) == " "){
+                        numwords++;
+                    }
+                }
+                document.getElementById("pOutput").innerHTML = numchars+ " characters<br>"+numwords+" words<br>";
+            }
+        </script>
+    </head>
+    <body>
+        <textarea id="txtUserInput" onkeyup="updateOutput();" value="Type your text here"></textarea><br>
+            <p id="pOutput">
+                Your stats will be shown here
+            </p>
+    </body>
+</html>

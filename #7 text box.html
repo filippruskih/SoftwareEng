@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function Factors() {
+            var txt = document.getElementById("txtBox").value;
+            var msg;
+            var num = parseInt(txt);
+            if(isNaN(num) || num < 1)
+                "Please enter a positive number, "+txt+", isn't a positive number.";
+            else{
+                msg = "The factors of"+num+" are: "
+                for(var i = 1; i <=num; i++){
+                    if(num%i==0){
+                    msg+= i;
+                    if(i < num)
+                    msg +=", ";
+                    else
+                    msg += "."
+                }
+            }
+        
+        }
+        document.getElementById("divOutput").innerHTML = msg;
+        }
+    </script>
+</head>
+
+<body>
+  <input id="txtBox" value="1" type="text">
+  <button onclick="Factors();">Show Factors</button>
+  <div id="divOutput">Outputs will be shown here</div>
+  
+</body>
+
+</html>

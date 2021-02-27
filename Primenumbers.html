@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function primeNumbers() {
+            var userNum = parseInt(prompt("Enter a number: "));
+            var txt = "The prime numbers up to "+userNum+" are: ";
+            if(isNaN(userNum)){
+                txt = "This is not a number!"
+            }
+            else{
+                // prime num
+                for(var i =3; i<=userNum; i++){
+                    var isPrime = true;
+                    for(var j=2; j<i && isPrime; j++){
+                        if(i%j==0){
+                            isPrime = false;
+                            break;
+                        }
+                    }
+                    if(isPrime)
+                    txt += i +", ";
+                }
+            }
+
+            document.getElementById("output").innerHTML = txt;
+
+
+
+        }
+    </script>
+</head>
+
+<body onload="primeNumbers();">
+    <p id="output">
+        Your output will be shown here.
+    </p>
+
+</body>
+
+</html>

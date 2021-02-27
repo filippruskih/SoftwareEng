@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+
+<head>
+    <script>
+        function numbers() {
+            var sHTML = "<p>";
+            for (var i = 1; i <= 20; i++) {
+                sHTML += Math.random() + "<br>";
+            }
+            sHTML += "</p>"; 
+            document.getElementById("clientSideContent").innerHTML = sHTML; // code he gave had a different '"' so string wasnt closed
+            console.log("Final HTML generated in loop: "+sHTML);
+}
+    </script>
+</head>
+
+<body>
+    <a href='javascript: numbers();'>Show Some Random Numbers</a><br>
+    <div id='clientSideContent'>Something here</div>
+</body>
+
+</html>

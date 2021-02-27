@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function promptForNumber() {
+        var txt = prompt("Please enter a number between 1 and 100");
+        var num = parseInt(txt);
+        if (isNaN(num)) {
+          alert(txt+" is not a number!");
+        }
+        else if (num<1 || num>100) {
+          alert(num+" is not between 1 and 100!");
+        }
+        else {
+          var html = "";
+          for (var i=1; i<=num; i++) {
+            html += i+"<br>";
+          }
+          document.getElementById("pOutput").innerHTML = html;
+        }
+      }
+
+    </script>
+  </head>
+  <body onload="promptForNumber();">
+    <p id='pOutput'></p>
+  </body>
+</html>
+
+

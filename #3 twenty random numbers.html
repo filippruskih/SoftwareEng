@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twenty random numbers</title>
+    <script>
+      function handleClick() {
+        // create 20 random numbers and find the biggest
+        var biggest = 0; // opposite of smallest - set to 0
+        var smallest = 1000; // set smallest to a large num so whenever a smaller num is generated its replaced
+        var sum = 0;
+
+        for (var i=0; i<20; i++) {
+          var num = Math.floor( Math.random()*1000 );
+          if (num>biggest)
+            biggest = num;
+            sum = sum + num
+          if (num < smallest)
+            smallest = num;
+        }
+
+        var res = "Of 20 random numbers, the biggest was "+biggest+", the smallest was "+smallest+" and the sum is "+sum;
+
+        // display the result
+        var p = document.getElementById('myParagraph');
+        p.innerHTML = res;
+      }
+    </script>
+  </head>
+  <body>
+    <p id='myParagraph'>
+      Click here to generate 20 random numbers and get the biggest, smallest and the sum of the 20 numbers.
+    </p>
+    <button onclick='handleClick();'>Demo</button>
+  </body>
+</html>
+

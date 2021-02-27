@@ -1,0 +1,17 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<script> 
+    function giveChoice() {
+        if (confirm("Make the document red?")==true) 
+            document.body.style.background = "red"; 
+        else { 
+            alert("Right so, it'll be green."); 
+            document.body.style.background = "green"; 
+        } 
+}
+</script>
+<head>
+<body onload="giveChoice();"> 
+</body>
+</html> 

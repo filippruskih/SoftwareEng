@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function Vowel(){
+            var txt = prompt("Type something here");
+            var numVowels = 0;
+            var testset = "AEIOUaeiou";
+            for(var i = 0; i<txt.length; i++){
+                var char = txt[i];
+                if(testset.indexOf(char)>=0)
+                numVowels++;
+            }
+            alert("You typed "+numVowels+" vowels");
+        }
+    </script>
+<body onload="Vowel();">
+</body>
+</html>

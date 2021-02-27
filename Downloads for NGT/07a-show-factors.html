@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+
+<head>
+  <script>
+    function showFactors() {
+      var txt = document.getElementById("txtInputBox").value;
+      var num = parseInt(txt);
+      var msg;
+      if (isNaN(num) || num < 1) {
+        msg = "Please type a positive number. '" + txt + "' is not a positive number";
+      }
+      else {
+        msg = "The factors of " + num + " are: ";
+        for (var i = 1; i <= num; i++) {
+          if (num % i == 0) {
+            msg += i;
+            if (i < num)
+              msg += ", ";
+            else
+              msg += ".";
+          }
+        }
+      }
+      document.getElementById("divOutput").innerHTML = msg;
+    }
+  </script>
+</head>
+
+<body>
+  <input type='text' id='txtInputBox' value='1'> <button onclick="showFactors();">Show Factors</button>
+  <div id='divOutput'>Output will go here</div>
+</body>
+
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function Factors() {
+            var txt = document.getElementById("txtBox").value;
+            var num = parseInt(txt);
+            var msg;
+            if (isNaN(num) || num < 1) {
+                "Please enter a posivtive number, " + txt + " is not a positive number <br>";
+            }
+            else {
+                msg = "The factors of " + num + " are: ";
+                for (var i = 1; i <= num; i++) {
+                    if (num % i == 0) {
+                        msg += i;
+                        if (i < num)
+                            msg += ", ";
+                        else
+                            msg += ". ";
+                    }
+                }
+            }
+            document.getElementById("divOutput").innerHTML = msg;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="txtBox">
+    <button onclick="Factors();">Show Factors</button>
+    <div id="divOutput">Output will go here:</div>
+</body>
+
+</html>

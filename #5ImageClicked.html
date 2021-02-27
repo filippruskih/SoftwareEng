@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practice for NGT</title>
+    <body>
+        <h3>Click the image below to change it </h3>
+        <img src="http://www.psychicsoftware.com/ct1113/banner-image-1.png" id="Click" onclick="Clicked()">
+    </body> 
+<script>// code wouldnt work if body was below script
+    let img = document.getElementById("Click");
+    let num = 1;
+
+    function Clicked(){
+        num++;
+        //num > 6 ? num = 1:     this is the same as if else statement but shorter
+        if(num > 6)  // when the image is at 6 it changes it back to 1
+        num = 1;
+        else 
+        num = num;
+        img.src="http://www.psychicsoftware.com/ct1113/banner-image-"+num+".png"; // allows user to change img by clicking the 
+        //image incrementing num therefore changing source of the image allowing change
+    }
+</script>
+</head>
+</html>

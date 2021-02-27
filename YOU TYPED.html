@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function TextArea(){
+                var txt = document.getElementById("pOutput").value;
+                    alert("You typed " +txt);
+                
+                document.getElementById("pOutput").innerHTML = txt;
+            }
+        </script>
+    </head>
+    <body>
+        <textarea id="pOutput"></textarea>
+        <button onclick="TextArea();">Click here</button>
+    </body>
+</html>

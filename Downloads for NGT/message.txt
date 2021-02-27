@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style> 
+		h1 {margin-left: 275px; 
+			color: #7E2FEE;}
+		th {
+		height: 50px;
+		width: 100px;
+		font-size: 20px;
+		font-style: bold;
+		background-color: palevioletred;
+		}
+		tr {
+		height: 50px;
+		width: 100px;
+		}
+		table, td, th {
+		border: 2px solid blue;
+		}
+		table {border-collapse: collapse;}
+      .grey { background-color:lightsalmon; } 
+      .day { background-color:violet; } 
+
+    </style>
+  	<script>
+      function showCalendar() {
+        var year = parseInt(document.getElementById("txtYear").value);
+        var month = parseInt(document.getElementById("txtMonth").value);
+        document.getElementById("divOutput").innerHTML = getHtmlCalendar(year, month);
+      }
+
+      function getHtmlCalendar(year, month) {
+	  
+        var myDateObject = new Date(); 
+        var currentDayNum = myDateObject.getDate();
+		
+		var numDays = 0;
+		var monthName;
+		switch(month){
+			case 0:			
+				numDays = 31;
+				monthName = "January";
+				break;
+			case 1:			
+				monthName = "February";
+				if (is_leap(year)==1)
+					numDays = 29;
+				else
+					numDays = 28;
+				break;
+			case 2:			
+				numDays = 31;
+				monthName = "March";
+				break;
+			case 3:			
+				numDays = 30;
+				monthName = "April";
+				break;
+			case 4:			
+				numDays = 31;
+				monthName = "May";
+				break;
+			case 5:			
+				numDays = 30;
+				monthName = "June";
+				break;
+			case 6:			
+				numDays = 31;
+				monthName = "July";
+				break;
+			case 7:			
+				numDays = 31;
+				monthName = "August";
+				break;
+			case 8:			
+				numDays = 30;
+				monthName = "September";
+				break;
+			case 9:			
+				numDays = 31;
+				monthName = "October";
+				break;
+			case 10:		
+				numDays = 30;
+				monthName = "November";
+				break;
+			case 11:		
+				numDays = 31;
+				monthName = "December";
+				break;
+		}
+		var d = new Date(year, month, 1);
+		var firstDay = d.getDay();
+		
+		var html = document.getElementById("callTitle").innerHTML = monthName+ " " +year;
+
+        var html = "<table border=1><tr><th width=50>Sun</th><th width=50>Mon</th><th width=50>Tue</th><th width=50>Wed</th><th width=50>Thu</th><th width=50>Fri</th><th width=50>Sat</th></tr>";
+        
+        var currColumn = 0;
+        
+        html += "<tr>";
+        for (i=0; i<firstDay; i++) {
+          html += "<td class='grey'></td>";
+          currColumn++;
+        }
+            
+        var day=1;
+        while (day <= numDays)
+        {
+          if (day==currentDayNum)
+            html += "<td class='day'>" + day + "</td>";
+          else
+            html += "<td class='day'>" + day + "</td>";
+          currColumn++;
+          if (currColumn==7) {
+            html += "</tr><tr>";
+            currColumn=0;
+          }
+          day++;
+        }
+        
+        if (currColumn>0) {
+          for (i=currColumn; i<7; i++)
+            html += "<td class='grey'></td>";
+        }
+        
+        html += "</tr></table>";
+        return html;
+		
+      }
+	  
+	 function is_leap(year) {
+		if (year % 400 == 0)
+			return 1;
+		if (year % 100 == 0)
+			return 0;
+		if (year % 4 == 0)
+			return 1;
+		return 0;
+		}
+	
+  	</script>
+  </head>
+  <body>
+    Please enter the year you want to see? <input id='txtYear'><br>
+    what month do you want to see?(Enter 0 for January, 1 for February and so on) <input id='txtMonth'><br>
+    <button onclick='showCalendar();'>Show Calendar</button><br>
+	<h1 id="callTitle"></h1>
+    <div id='divOutput'></div>
+  </body>
+</html>

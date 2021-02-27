@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prompt Demo</title>
+<script>
+function handleClick() {
+    var result = window.prompt("What is your name", "Enter your name here"); //(string1, string 2)
+    result = "Hello, "+result+", nice to meet you"; // result will be the input typed in
+    var p = document.getElementById("NameButton"); 
+    p.innerHTML = result;
+}
+
+</script>
+</head>
+<body>
+    <p id="NameButton">
+        Click the button below to enter your name via a prompt.
+    </p>
+<button onclick='handleClick();'>Name button</button>
+</body>
+</html>

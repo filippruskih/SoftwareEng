@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function countDown() {
+            var oBox = document.getElementById("currValue"); 
+            var v = parseInt(oBox.value);
+            if (v >= 1) 
+            {
+                v--;
+                oBox.value = v; window.setTimeout(countDown, 1000);
+            }
+            if (v <= 0) {
+                oBox.value = "Lift off!";
+            }
+        }
+    </script>
+</head>
+
+<body> Countdown!<br>
+    <input id='currValue' value='10'> <input type=button value='Go' onClick='countDown();'>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function Addition() {
+            var textBox1 = document.getElementById("txtBox1").value;
+            var textBox2 = document.getElementById("txtBox2").value;
+            var num1 = parseInt(textBox1);
+            var num2 = parseInt(textBox2);
+
+            var result = num1 + num2;
+            var sHTML = num1 + " + " + num2 + " = " + result + ".";
+            document.getElementById("divOutput").innerHTML = sHTML;
+        }
+
+        function Subtraction() {
+            var textBox1 = document.getElementById("txtBox1").value;
+            var textBox2 = document.getElementById("txtBox2").value;
+            var num1 = parseInt(textBox1);
+            var num2 = parseInt(textBox2);
+
+            var result = num1 - num2;
+            var sHTML = num1 + " - " + num2 + " = " + result + ".";
+            document.getElementById("divOutput").innerHTML = sHTML;
+
+
+        }
+        function Multiplication() {
+            var textBox1 = document.getElementById("txtBox1").value;
+            var textBox2 = document.getElementById("txtBox2").value;
+            var num1 = parseInt(textBox1);
+            var num2 = parseInt(textBox2);
+
+            var result = num1 * num2;
+            var sHTML = num1 + " x " + num2 + " = " + result + ".";
+            document.getElementById("divOutput").innerHTML = sHTML;
+
+        }
+        function Division() {
+            var textBox1 = document.getElementById("txtBox1").value;
+            var textBox2 = document.getElementById("txtBox2").value;
+            var num1 = parseInt(textBox1);
+            var num2 = parseInt(textBox2);
+
+            var result = num1 / num2;
+            var sHTML = num1 + " / " + num2 + " = " + result + ".";
+            document.getElementById("divOutput").innerHTML = sHTML;
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h3>Calculator</h3>
+    <input id="txtBox1" value="1" type="text">
+    <input id="txtBox2" value="2" type="text"><br>
+    <button onclick="Addition();"> + </button>
+    <button onclick="Subtraction();"> - </button>
+    <button onclick="Multiplication();"> x </button>
+    <button onclick="Division();"> / </button>
+    <div id="divOutput">Output will be displayed here</div>
+
+</body>
+
+</html>

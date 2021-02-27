@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var leftPos = 200;
+        var topPos = 200;
+        var leftVel = -1;
+        var topVel = -1;
+
+            function animate(){
+                leftPos += leftVel;
+                topPos += topVel;
+
+                if(leftPos >= 600)
+                leftVel = -1;
+                else if (leftPos <= 0)
+                leftVel = 1;
+                if(topPos >= 600)
+                topVel = -1;
+                else if(topPos <= 0)
+                topVel = 1;
+
+                document.getElementById("theBall").style.left = leftPos+"px";
+                document.getElementById("theBall").style.top = topPos+"px";
+
+                setTimeout(animate, 20);
+            }
+
+    </script>
+    
+</head>
+
+<body onload="animate();">
+    <div style='position:absolute; left:0px; top:0px; width:600px; height:600px; background:#00FF00'>
+    <div style='position:absolute; left:200px; top:200px;' id='theBall'>
+        <img src='http://www.psychicsoftware.com/ball.png'>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practice for NGT</title>
+<script>
+    function handleClick(){
+        alert("You pressed the button that i told you not to press!!!");
+    }
+    function changePara(){
+        var p = document.getElementById('myParagraph');
+        p.innerHTML = 5+(7*6); // sum will not be shown only answer when button is clicked
+    }
+    function mathsProblems(){
+        a = 4;
+        b = 2;
+        c = 5;
+        d = 3;
+        var v = document.getElementById("mathsbutton");
+        v.innerHTML = ((a+b)*(b*3))/5;
+    }
+</script>
+</head>
+<body>
+    <p id="myParagraph">
+        Result will be displayed here
+    </p>
+    <p>
+        This paragraph contains a span <span style="color: blue;"> which colours the text in a colour of your choice</span> like this.
+    </p>
+    <p id="mathsbutton">
+        ((a+b)*(b*d))/c
+    </p>
+    <button onclick="handleClick();">Dont press me</button>
+    <button onclick="changePara();">Press to change paragraph</button>
+    <button onclick="mathsProblems();">Maths problem</button>
+</body>
+</html>
